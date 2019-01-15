@@ -1,0 +1,94 @@
+---
+title: "Getting Started with R"
+author: Justin Han
+date: "January 14, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+###Task 1
+# R Markdown 
+## R Markdown
+### R Markdown
+
+###Task 2
+This is *Justin Han's* first assignment for **GEOG 458**. Our course page can be accessed here.
+
+###Task 3
+![This is  my favorite TV show](https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/Avatar_The_Last_Airbender_logo.svg/1024px-Avatar_The_Last_Airbender_logo.svg.png)
+
+###Task 4
+This is the mass-energy equivalence equation: $$E=mc^2$$
+
+###Task 5
+## Top 3 Grossing Marvel Movies
+Movie                 |Amount
+----------------------|-------------
+Black Panther (2018)  | $700,059,566
+Avengers: Infinity War(2018)|$678,815,482
+Marvel's The Avengers(2012) |$623,357,910
+Reference: [Top Grossing Marvel Movies](https://www.boxofficemojo.com/franchises/chart/?id=marvelcomics.htm)
+
+### Task 6
+```{r echo=TRUE}
+100/10+2
+100/(10+2)
+5**2+3%%39
+(3+6)/4*7>=29%%3**5
+4*5/3+25
+```
+
+###Task 7
+```{r echo=TRUE}
+(x <- 8 * 3)
+(x + 10)
+y <- 5**2
+z <- 24 / 6 + 5
+(y ** z + x)
+(x / z - y)
+(y+y*x**z/x)
+```
+
+###Task 8
+```{r echo=TRUE}
+(x <- seq(1,30))
+(y <- c("Chicken Wings", "Pizza", "Spaghetti"))
+length(x)
+length(y)
+sum(x)
+#using sum() on the vector with strings gets a error
+```
+
+###Task 9
+```{r echo=TRUE}
+x <- seq(1, 5)
+y <- seq(6, 10)
+x + y
+(z <- x * y)
+```
+
+###Task 10
+```{r echo=TRUE}
+a <- seq(1, 5)
+b <- seq(6, 10)
+c <- a * b
+(z <- c(x, y))
+rbind(a,b,c)
+(dataframe <- data.frame(a,b,c))
+```
+
+##Loading the Data (task 11-14)
+This is how to load data into R and how to convert it
+
+```{r echo=TRUE}
+library(tidyverse)
+object1=read.csv("China_EO_49to17.csv")
+object2=as_tibble(object1)
+(year_desc <- arrange(object2, desc(Year)))
+(comparison_shang_beij <- object2[,c("Shanghai_Enterprise", "Shanghai_Output", "Beijing_Enterprise", "Beijing_Output")])
+(comparison2 <- mutate(comparison_shang_beij, Output_Ratio = Beijing_Output/Shanghai_Output))
+
+```
